@@ -1,0 +1,21 @@
+*****
+INSERT INTO PHD_STUDENT (`student_id`, `first_name`, `last_name`, `start_semester`, `start_year`, `supervisor`) VALUES ('AA1234','Abimbola','Abioye','Fall',2016,'AO5671');
+INSERT INTO `GRA` (`student_id`, `funding`, `monthly_pay`) VALUES ('AA1234','NIH3',3000);
+INSERT INTO `PHDCOMMITTEE` (`student_id`, `instructor_id`) VALUES ('AA1234','AO5671');
+INSERT INTO `INSTRUCTOR` (`instructor_id`, `first_name`, `last_name`, `start_date`, `degree`, `rank`, `type`) VALUES ('123456789','Andrea','Delgado','2002-07-15','PhD','Associate Professor','Adjunct');
+INSERT INTO `TT` (`instructor_id`, `no_of_phd_students`) VALUES ('AO5671', '1');
+
+
+
+
+UPDATE gta,section
+SET monthly_pay = value1,
+WHERE gta.section_id = section.section_id AND section.course_id = 'value2'; 
+
+
+DELETE ss, ps
+FROM self_support ss 
+JOIN PHD_STUDENT ps ON ps.student_id = ss.student_id
+WHERE ss.student_id NOT IN (SELECT student_id from MILESTONESPASSED) AND ss.student_id = '$value';
+
+
